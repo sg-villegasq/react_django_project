@@ -130,3 +130,6 @@ dmypy.json
 
 # vscode settings
 .vscode/
+
+# react app folders
+node_modules/
