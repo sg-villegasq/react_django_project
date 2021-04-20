@@ -13,11 +13,12 @@ export default class Room extends Component {
         };
 
         this.roomCode = this.props.match.params.roomCode;
-        this.getRoomDetails();
         this.leaveButtonPressed = this.leaveButtonPressed.bind(this);
         this.updateShowSettings = this.updateShowSettings.bind(this);
         this.renderSettings = this.renderSettings.bind(this);
         this.renderSettingsButton = this.renderSettingsButton.bind(this);
+        this.getRoomDetails = this.getRoomDetails.bind(this);
+        this.getRoomDetails();
     }
 
     getRoomDetails() {
@@ -64,7 +65,7 @@ export default class Room extends Component {
                         votesToSkip={this.state.votesToSkip} 
                         guestCanPause={this.state.guestCanPause} 
                         roomCode={this.roomCode} 
-                        updateCallBack={() => {}}
+                        updateCallBack={this.getRoomDetails}
                     />
                 </Grid>
                 <Grid item xs={12} align="center">
@@ -112,7 +113,7 @@ export default class Room extends Component {
                 </Grid>
                 <Grid item xs={12} align="center">
                     <Typography variant="h6" component="h6">
-                        Guest can pause: {this.state.guestCanPause}
+                        Guest can pause: {this.state.guestCanPause.toString()}
                     </Typography>
                 </Grid>
                 <Grid item xs={12} align="center">
