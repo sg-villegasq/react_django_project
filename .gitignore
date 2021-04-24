@@ -133,3 +133,6 @@ dmypy.json
 
 # react app folders
 node_modules/
+
+# spotify credentials
+credentials.py
